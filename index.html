@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	.deb{
+		width: 100%;
+		height: 100vh;
+		background: #181716;
+		position: absolute;
+		transition: all 0.9s;
+		background-position : -20px;
+	}
+	h1{
+		font-size: 6em;
+		text-align: center;
+		font-family: cursive, 'sans-serif;';
+		margin: 40px 0;
+		color: #fff;
+		height: 268px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.notmain{
+		width: 300px;
+		height: 200px;
+		margin:  10px auto;
+	}
+	input{
+		width: 160px;
+		height: 60px;
+		border: none;
+		border: 3px dotted dimgray;
+		background: transparent;
+		font-size: 4em;
+		text-align: center;
+		border-radius: 60px;
+		font-family: sans-serif;
+		color: #fff;
+	}
+	button{
+		height: 50px;
+		border: none;
+		margin-top: 20px;
+		border-radius: 50px;
+		width: 160px;
+		background: coral;
+		font-size: 1.6em;
+		font-family: sans-serif;
+		font-weight: bolder;
+		transition: 0.9s;
+	}
+	button:hover{
+		box-shadow: inset 80px 0px 0.009px #00ffff,
+					inset -80px 0px 0.009px #00ffff;
+	}
+
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+	#gh{
+		margin-left: 44%;
+		position: fixed;
+		display: none;
+	}
+	</style>
+</head>
+<body>
+<div class="deb" id="deb">
+	<h1 id="ans">Enter Your Age<br> Click Submit </h1>
+	<div class="notmain" id="nm">
+		<center>
+		<input type="number" id="age" >
+		<br>
+		<button onclick="ss()">Submit</button>
+		</center>
+	</div>
+	<button id="gh" onclick="refreshPage()">Go Home</button>
+<script type="text/javascript">
+	var ans = document.getElementById('ans');
+	var deb = document.getElementById('deb');
+	var t = document.getElementById('age').value;
+	let greet;
+
+	function refreshPage(){
+    window.location.reload();
+} 
+function ss(){
+	var t = document.getElementById('age').value;
+
+	nm.style.display = "none";	
+	gh.style.display = "initial";
+
+	if (t <= 12 && t >=1 ) {
+		greet = "You Are A Child";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(kidtoy.jpg)";
+		deb.style.backgroundSize = "365px 365px";
+		deb.style.backgroundPosition = "17px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "#fff";
+
+	}
+	else if (t <=17 && t >=13) {
+		greet = "You Are A Teenager";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(teen.jpg)";
+		deb.style.backgroundSize = "cover";
+		deb.style.backgroundPosition = "-70px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "#fff";
+	}
+	else if (t <=45 && t >=18) {
+		greet = "You Are An Adult";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(adult.jpg)";
+		deb.style.backgroundSize = "cover";
+		deb.style.backgroundPosition = "23px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "#fff";
+	}
+	else if (t <=0) {
+		greet = "You Entered Wrong Age";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(wrong.jpg),#fff";
+		deb.style.backgroundPosition = "-30px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "#ff0000";
+	}
+	else if (t > 140) {
+		greet = "You Entered Wrong Age";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(wrong.jpg),#fff";
+		deb.style.backgroundPosition = "-30px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "#ff0000";
+	}
+	else {
+	 	greet = "You Are Senior citizen";
+	 	deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(old.jpeg)";
+		deb.style.backgroundSize = "cover";
+		deb.style.backgroundPosition = "43px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "#fff";
+	 }
+	 document.getElementById('ans').innerHTML = greet;
+	}
+</script>
+</div>
+</body>
+</html>
