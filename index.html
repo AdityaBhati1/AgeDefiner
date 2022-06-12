@@ -136,13 +136,21 @@ function ss(){
 		deb.style.transition = "all 0.9s";
 		ans.style.color = "#ff0000";
 	}
-	else if (t > 140) {
-		greet = "You Entered Wrong Age";
-		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(wrong.jpg),#fff";
+	else if (t >=120 && t<=180) {
+		greet = "You Are Very Old ";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(too-old.jpg),#fff";
+		deb.style.backgroundPosition = "-30px";
+		deb.style.transition = "all 0.9s";
+		ans.style.color = "brown";
+	}
+	else if (t >=180) {
+		greet = "You Are Entered Wrong Age";
+		deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(Wrong.jpg),#fff";
 		deb.style.backgroundPosition = "-30px";
 		deb.style.transition = "all 0.9s";
 		ans.style.color = "#ff0000";
 	}
+
 	else {
 	 	greet = "You Are Senior citizen";
 	 	deb.style.background = "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)),url(old.jpeg)";
